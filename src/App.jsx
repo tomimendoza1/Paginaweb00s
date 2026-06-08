@@ -21,30 +21,35 @@ const lookbook = [
     note: 'Jean lavado, top rosa, cinturon brillante y cartera mini.',
     tags: ['icy denim', 'baby tee', 'silver belt'],
     color: 'look-denim',
+    image: '/assets/look-denim.png',
   },
   {
     title: 'Velour Pop',
     note: 'Conjunto suave, lentes de color, cierre frontal y labios gloss.',
     tags: ['velour', 'zip hoodie', 'pink gloss'],
     color: 'look-velour',
+    image: '/assets/look-velour.png',
   },
   {
     title: 'Chrome Party',
     note: 'Top metalizado, plataformas altas y accesorios con efecto espejo.',
     tags: ['chrome', 'platforms', 'flash'],
     color: 'look-chrome',
+    image: '/assets/look-chrome.png',
   },
   {
     title: 'Pink Gloss',
     note: 'Falda mini, clips de mariposa, brillo labial y textura plastica.',
     tags: ['butterfly clips', 'mini skirt', 'plastic shine'],
     color: 'look-gloss',
+    image: '/assets/look-gloss.png',
   },
   {
     title: 'Mall Girl',
     note: 'Bolso pequeno, lentes ahumados, denim claro y vibra de shopping.',
     tags: ['mini bag', 'tinted shades', 'mall pop'],
     color: 'look-mall',
+    image: '/assets/look-mall.png',
   },
 ];
 
@@ -185,12 +190,11 @@ function App() {
             <h2>Lookbook de epoca</h2>
           </div>
           <div className={`lookbook-card ${currentLook.color}`}>
-            <div className="look-visual" aria-hidden="true">
-              <span className="look-top" />
-              <span className="look-bottom" />
-              <span className="look-bag" />
-              <span className="look-spark one" />
-              <span className="look-spark two" />
+            <div className="look-visual">
+              <img
+                src={currentLook.image}
+                alt={`Look ${currentLook.title} inspirado en la moda de los anos 2000`}
+              />
             </div>
             <div className="look-copy">
               <p className="look-count">
