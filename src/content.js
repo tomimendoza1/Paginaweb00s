@@ -24,7 +24,7 @@ export const siteContent = {
   },
   hero: {
     imageAlt: 'Composicion editorial de moda estilo anos 2000',
-    eyebrow: 'pink chrome issue',
+    eyebrow: '',
     title: 'Un viaje visual a la moda mas pop de los 2000',
     copy:
       '',
