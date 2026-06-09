@@ -7,7 +7,7 @@ export const siteContent = {
     ariaLabel: 'Pantalla de inicio',
     eyebrow: 'retro fashion portal',
     title: 'Moda 2000',
-    copy: 'Rosa glossy, denim lavado, accesorios brillantes y energia de revista teen.',
+    copy: 'Gloss rosa, denim lavado, accesorios brillantes y energia de revista teen.',
     loadingAriaLabel: 'Cargando closet',
     loadingText: 'loading closet...',
     button: 'Entrar al closet',
@@ -95,7 +95,7 @@ export const siteContent = {
       text: 'Conjuntos suaves, cierres frontales, bolsos mini y gafas de color.',
     },
     {
-      title: 'Noche chrome',
+      title: 'Night chrome',
       text: 'Tops metalizados, plataformas, gloss y destellos de camara flash.',
     },
   ],
@@ -120,6 +120,6 @@ export const siteContent = {
     items: ['Mini bag', 'Butterfly clips', 'Gloss', 'Platform shoes', 'Tinted shades'],
   },
   footer: {
-    text: 'Frontend retro Y2K hecho para deploy estatico en Vercel.',
+    text: 'Pagina web retro Y2K hecho para TP de la Facultad de Periodismo (UNLP).',
   },
 };
