@@ -103,7 +103,7 @@ export const siteContent = {
     eyebrow: 'digital scrapbook',
     title: 'Looks, stickers y textura de revista',
     copy:
-      'La pagina mezcla collage editorial con UI retro: bordes glossy, brillos, grillas y botones con presencia para que el frontend se sienta de epoca.',
+      '',
     imageAlt: 'Tablero visual de outfits inspirados en los anos 2000',
     stickers: [
       { label: 'CD', className: 'cd-sticker' },
