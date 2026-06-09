@@ -27,7 +27,7 @@ export const siteContent = {
     eyebrow: 'pink chrome issue',
     title: 'Un viaje visual a la moda mas pop de los 2000',
     copy:
-      'Una landing con espiritu Y2K: texturas plasticas, flashes, stickers, denim, plateado y mucho rosa para una experiencia retro lista para Vercel.',
+      '',
     button: 'Abrir lookbook',
   },
   ticker: {
