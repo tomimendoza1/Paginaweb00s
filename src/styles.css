@@ -239,15 +239,12 @@ button {
 .gallery-copy h2,
 .closet-section h2 {
   margin: 0;
-  color: #ffffff;
+  color: #bb006d;
   font-family: Impact, "Arial Black", sans-serif;
   font-weight: 900;
   letter-spacing: 0;
   line-height: 0.95;
-  text-shadow:
-    2px 2px 0 #ff169b,
-    5px 5px 0 #6c2cff,
-    0 0 26px rgba(255, 255, 255, 0.9);
+  text-shadow: none;
 }
 
 .intro-panel h1 {
@@ -356,6 +353,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+  min-height: 70px;
   padding: 14px clamp(16px, 5vw, 54px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.85);
   background: rgba(255, 205, 235, 0.82);
@@ -372,14 +370,144 @@ button {
   text-shadow: 1px 1px 0 #fff;
 }
 
-.topbar nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
+.topbar-logo-mark {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: min(300px, 34vw);
+  transform: translateX(-50%);
 }
 
-.topbar nav a,
+.topbar-logo-mark img {
+  display: block;
+  width: 100%;
+  height: 50px;
+  object-fit: contain;
+}
+
+.menu-toggle {
+  position: relative;
+  display: inline-grid;
+  gap: 5px;
+  place-content: center;
+  width: 48px;
+  height: 42px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 181, 222, 0.86)),
+    linear-gradient(135deg, #ff1493, #b000ff);
+  box-shadow:
+    inset 0 -6px 10px rgba(255, 67, 178, 0.22),
+    0 8px 18px rgba(137, 0, 84, 0.14);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 23px;
+  height: 3px;
+  border-radius: 999px;
+  background: #6b164b;
+  box-shadow: 0 1px 0 #ffffff;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 14;
+  visibility: hidden;
+  background: rgba(66, 22, 51, 0.28);
+  opacity: 0;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.sidebar-backdrop.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar-menu {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 15;
+  width: min(320px, calc(100vw - 44px));
+  padding: 18px;
+  color: #421633;
+  border-right: 3px solid #ffffff;
+  background:
+    linear-gradient(180deg, rgba(255, 245, 252, 0.96), rgba(255, 185, 226, 0.94)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.28) 0 2px, transparent 2px 8px);
+  box-shadow:
+    18px 0 38px rgba(137, 0, 84, 0.22),
+    inset -2px 0 0 rgba(255, 255, 255, 0.54);
+  pointer-events: none;
+  transform: translateX(-105%);
+  transition: transform 220ms ease;
+}
+
+.sidebar-menu.is-open {
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.86);
+}
+
+.sidebar-header p {
+  margin: 0;
+  color: #bb006d;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.sidebar-header button {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff1493, #b000ff);
+  box-shadow: inset 0 5px 8px rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-menu nav {
+  display: grid;
+  gap: 12px;
+  padding-top: 18px;
+}
+
+.sidebar-menu nav a {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 12px 14px;
+  color: #6b164b;
+  font-size: 0.94rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff, #ffc3e5);
+  box-shadow:
+    inset 0 -5px 10px rgba(255, 67, 178, 0.22),
+    0 8px 16px rgba(137, 0, 84, 0.1);
+}
+
 .closet-tags span,
 .look-tags span {
   padding: 8px 12px;
@@ -616,21 +744,19 @@ button {
 
 .look-count {
   margin: 0 0 10px;
-  color: #ffffff;
+  color: #bb006d;
   font-family: Impact, "Arial Black", sans-serif;
   font-size: 1.25rem;
-  text-shadow: 2px 2px 0 #bb006d;
+  text-shadow: none;
 }
 
 .look-copy h3 {
   margin: 0;
-  color: #ffffff;
+  color: #bb006d;
   font-family: Impact, "Arial Black", sans-serif;
   font-size: clamp(3rem, 7vw, 6.6rem);
   line-height: 0.92;
-  text-shadow:
-    2px 2px 0 #ff1493,
-    5px 5px 0 #6c2cff;
+  text-shadow: none;
 }
 
 .look-tags,
@@ -840,12 +966,8 @@ button {
 
 @media (max-width: 900px) {
   .topbar {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .topbar nav {
-    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
   }
 
   .hero-section,
@@ -881,6 +1003,23 @@ button {
 }
 
 @media (max-width: 560px) {
+  .logo-link {
+    font-size: 1rem;
+  }
+
+  .topbar-logo-mark {
+    width: min(150px, 36vw);
+  }
+
+  .topbar-logo-mark img {
+    height: 38px;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 40px;
+  }
+
   .intro-panel {
     padding: 26px 18px;
   }

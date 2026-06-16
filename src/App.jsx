@@ -3,6 +3,7 @@ import { siteContent } from './content.js';
 
 function App() {
   const [entered, setEntered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [activeLook, setActiveLook] = useState(0);
   const [sparkles, setSparkles] = useState([]);
 
@@ -64,8 +65,27 @@ function App() {
     return () => window.removeEventListener('mousemove', onMouseMove);
   }, [entered]);
 
+  useEffect(() => {
+    if (!menuOpen) {
+      return undefined;
+    }
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
+
   const changeLook = (direction) => {
     setActiveLook((index) => (index + direction + lookbook.length) % lookbook.length);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
@@ -109,12 +129,42 @@ function App() {
       <section className={`page-content ${entered ? 'is-visible' : ''}`} aria-hidden={!entered}>
         <header className="topbar">
           <a href="#inicio" className="logo-link">{header.logo}</a>
+          <a href="#inicio" className="topbar-logo-mark" aria-label={header.logo}>
+            <img src="/assets/y2k-logo.png" alt="" aria-hidden="true" />
+          </a>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label={menuOpen ? 'Cerrar menu' : 'Abrir menu'}
+            aria-expanded={menuOpen}
+            aria-controls="main-sidebar"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </header>
+
+        <div
+          className={`sidebar-backdrop ${menuOpen ? 'is-visible' : ''}`}
+          aria-hidden="true"
+          onClick={closeMenu}
+        />
+
+        <aside className={`sidebar-menu ${menuOpen ? 'is-open' : ''}`} id="main-sidebar" aria-hidden={!menuOpen}>
+          <div className="sidebar-header">
+            <p>{header.logo}</p>
+            <button type="button" onClick={closeMenu} aria-label="Cerrar menu" tabIndex={menuOpen ? 0 : -1}>
+              x
+            </button>
+          </div>
           <nav aria-label={header.navAriaLabel}>
             {header.links.map((link) => (
-              <a href={link.href} key={link.href}>{link.label}</a>
+              <a href={link.href} key={link.href} onClick={closeMenu} tabIndex={menuOpen ? 0 : -1}>{link.label}</a>
             ))}
           </nav>
-        </header>
+        </aside>
 
         <section className="hero-section" id="inicio">
           <div className="hero-media">

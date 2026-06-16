@@ -1,6 +1,6 @@
 export const siteContent = {
   document: {
-    title: 'Moda 2000',
+    title: '',
     description: 'Landing frontend retro inspirada en la moda de los anos 2000.',
   },
   intro: {
@@ -13,7 +13,7 @@ export const siteContent = {
     button: 'Entrar al closet',
   },
   header: {
-    logo: 'Moda 2000',
+    logo: '',
     navAriaLabel: 'Secciones principales',
     links: [
       { href: '#lookbook', label: 'Lookbook' },
