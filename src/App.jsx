@@ -4,6 +4,7 @@ import { siteContent } from './content.js';
 function App() {
   const [entered, setEntered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
   const [activeLook, setActiveLook] = useState(0);
   const [sparkles, setSparkles] = useState([]);
 
@@ -14,15 +15,17 @@ function App() {
     header,
     hero,
     intro,
-    lookbook,
     lookbookSection,
+    lookbookTabs,
     moodboard,
     ticker,
     trends,
     trendsSection,
   } = siteContent;
 
-  const currentLook = lookbook[activeLook];
+  const currentTab = lookbookTabs[activeTab];
+  const currentItems = currentTab.items;
+  const currentLook = currentItems[activeLook];
   const tickerWords = [...ticker.words, ...ticker.words.slice(0, 4)];
 
   useEffect(() => {
@@ -80,8 +83,13 @@ function App() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [menuOpen]);
 
+  const selectTab = (index) => {
+    setActiveTab(index);
+    setActiveLook(0);
+  };
+
   const changeLook = (direction) => {
-    setActiveLook((index) => (index + direction + lookbook.length) % lookbook.length);
+    setActiveLook((index) => (index + direction + currentItems.length) % currentItems.length);
   };
 
   const closeMenu = () => {
@@ -191,6 +199,21 @@ function App() {
             <p className="eyebrow">{lookbookSection.eyebrow}</p>
             <h2>{lookbookSection.title}</h2>
           </div>
+          <div className="lookbook-tabs" role="tablist" aria-label={lookbookSection.tabsAriaLabel}>
+            {lookbookTabs.map((tab, index) => (
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeTab === index}
+                aria-controls="lookbook-panel"
+                className={activeTab === index ? 'is-active' : ''}
+                key={tab.label}
+                onClick={() => selectTab(index)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
           <div className={`lookbook-card ${currentLook.color}`}>
             <div className="look-visual">
               <img
@@ -200,15 +223,13 @@ function App() {
             </div>
             <div className="look-copy">
               <p className="look-count">
-                {String(activeLook + 1).padStart(2, '0')} / {String(lookbook.length).padStart(2, '0')}
+                {String(activeLook + 1).padStart(2, '0')} / {String(currentItems.length).padStart(2, '0')}
               </p>
-              <h3>{currentLook.title}</h3>
-              <p>{currentLook.note}</p>
-              <div className="look-tags">
-                {currentLook.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
+              <div className="look-panel" id="lookbook-panel" role="tabpanel">
+                <p className="look-category">{currentTab.eyebrow}</p>
+                <h3>{currentLook.title}</h3>
               </div>
+              <p>{currentLook.note}</p>
               <div className="look-controls">
                 <button type="button" onClick={() => changeLook(-1)} aria-label={lookbookSection.previousAriaLabel}>
                   {lookbookSection.previousButton}

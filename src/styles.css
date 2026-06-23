@@ -508,8 +508,7 @@ button {
     0 8px 16px rgba(137, 0, 84, 0.1);
 }
 
-.closet-tags span,
-.look-tags span {
+.closet-tags span {
   padding: 8px 12px;
   color: #6b164b;
   font-size: 0.82rem;
@@ -657,7 +656,44 @@ button {
 .section-heading {
   display: grid;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+}
+
+.lookbook-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.lookbook-tabs button {
+  min-height: 42px;
+  padding: 10px 18px;
+  color: #7b0057;
+  font-size: 0.88rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 8px 8px 0 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 195, 229, 0.88)),
+    linear-gradient(135deg, #ff1493, #b000ff);
+  box-shadow:
+    inset 0 -6px 10px rgba(255, 67, 178, 0.18),
+    0 8px 16px rgba(137, 0, 84, 0.12);
+  transition: transform 160ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+
+.lookbook-tabs button:hover,
+.lookbook-tabs button.is-active {
+  color: #ffffff;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45), transparent 42%),
+    linear-gradient(135deg, #ff1493, #b000ff);
+  box-shadow:
+    0 8px 0 rgba(123, 0, 87, 0.54),
+    0 16px 24px rgba(117, 0, 82, 0.24);
+  transform: translateY(-2px);
 }
 
 .lookbook-card {
@@ -750,6 +786,16 @@ button {
   text-shadow: none;
 }
 
+.look-category {
+  margin: 0 0 8px;
+  color: #7b0057;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .look-copy h3 {
   margin: 0;
   color: #bb006d;
@@ -759,15 +805,10 @@ button {
   text-shadow: none;
 }
 
-.look-tags,
 .look-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-.look-tags {
-  margin: 18px 0 22px;
 }
 
 .look-controls button {
@@ -1050,6 +1091,19 @@ button {
 
   .lookbook-card {
     padding: 18px;
+  }
+
+  .lookbook-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .lookbook-tabs button {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding-inline: 14px;
+    font-size: 0.78rem;
   }
 
   .look-visual {
