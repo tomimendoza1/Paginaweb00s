@@ -251,17 +251,17 @@ export const siteContent = {
     {
       title: '...Baby one more time',
       text: 'Britney Spears',
-      spotifyLink: 'https://open.spotify.com/search/...Baby%20One%20More%20Time%20Britney%20Spears',
+      spotifyLink: 'https://open.spotify.com/playlist/3S7CN21jWGHyBp04BFBswg?si=q--9RpM_SyW0zVLT0WBGTw&pi=qt7tx3KYTT-qd',
     },
     {
       title: 'Gasolina',
       text: 'Daddy Yankee',
-      spotifyLink: 'https://open.spotify.com/search/Gasolina%20Daddy%20Yankee',
+      spotifyLink: 'https://open.spotify.com/playlist/3S7CN21jWGHyBp04BFBswg?si=q--9RpM_SyW0zVLT0WBGTw&pi=qt7tx3KYTT-qd',
     },
     {
       title: 'Genio Atrapado',
       text: 'Christina Aguilera',
-      spotifyLink: 'https://open.spotify.com/search/Genio%20Atrapado%20Christina%20Aguilera',
+      spotifyLink: 'https://open.spotify.com/playlist/3S7CN21jWGHyBp04BFBswg?si=q--9RpM_SyW0zVLT0WBGTw&pi=qt7tx3KYTT-qd',
     },
   ],
   moodboard: {
