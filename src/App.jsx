@@ -269,7 +269,7 @@ function App() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Ir a la cancion
+                  Play the song
                 </a>
               </article>
             ))}

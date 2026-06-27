@@ -1136,6 +1136,11 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .trend-card {
+    align-items: center;
+    text-align: center;
+  }
+
   .closet-tags {
     justify-content: flex-start;
   }
