@@ -247,7 +247,7 @@ function App() {
                 <p className="look-category">{currentTab.eyebrow}</p>
                 <h3>{currentLook.title}</h3>
               </div>
-              <p>{currentLook.note}</p>
+              {currentLook.note && <p>{currentLook.note}</p>}
             </div>
           </div>
         </section>
