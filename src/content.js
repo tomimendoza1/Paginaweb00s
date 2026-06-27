@@ -243,20 +243,25 @@ export const siteContent = {
   ],
   trendsSection: {
     eyebrow: 'trend diary',
-    title: 'Tendencias que gritan 2000',
+    title: 'Musical Trends',
   },
+  //necesito que en trends haya abajo de cada texto el link a las canciones de spotify mediante un boton que diga "Escuchar en Spotify" y que abra la cancion en una nueva pestaña
+  //falta el boton de escuchar en spotify en cada trend. PONELO ABAJO DE CADA TREND Y QUE ABRA EN UNA NUEVA PESTAÑA EL LINK DE SPOTIFY
   trends: [
     {
-      title: 'Denim con brillo',
-      text: 'Tiro bajo, costuras marcadas, lavados icy blue y accesorios plateados.',
+      title: '...Baby one more time',
+      text: 'Britney Spears',
+      spotifyLink: 'https://open.spotify.com/search/...Baby%20One%20More%20Time%20Britney%20Spears',
     },
     {
-      title: 'Velour pop',
-      text: 'Conjuntos suaves, cierres frontales, bolsos mini y gafas de color.',
+      title: 'Gasolina',
+      text: 'Daddy Yankee',
+      spotifyLink: 'https://open.spotify.com/search/Gasolina%20Daddy%20Yankee',
     },
     {
-      title: 'Night chrome',
-      text: 'Tops metalizados, plataformas, gloss y destellos de camara flash.',
+      title: 'Genio Atrapado',
+      text: 'Christina Aguilera',
+      spotifyLink: 'https://open.spotify.com/search/Genio%20Atrapado%20Christina%20Aguilera',
     },
   ],
   moodboard: {

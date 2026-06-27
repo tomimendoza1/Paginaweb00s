@@ -263,6 +263,14 @@ function App() {
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{trend.title}</h3>
                 <p>{trend.text}</p>
+                <a
+                  className="spotify-button"
+                  href={trend.spotifyLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ir a la cancion
+                </a>
               </article>
             ))}
           </div>
