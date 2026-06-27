@@ -292,8 +292,7 @@ button {
 }
 
 .continue-button,
-.hero-cta,
-.look-controls button {
+.hero-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -314,8 +313,7 @@ button {
 }
 
 .continue-button:hover,
-.hero-cta:hover,
-.look-controls button:hover {
+.hero-cta:hover {
   transform: translateY(-3px);
   box-shadow:
     0 11px 0 #7b0057,
@@ -790,6 +788,64 @@ button {
   padding: 12px;
 }
 
+.look-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 0 14px;
+}
+
+.look-arrow {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 42px;
+  padding: 0;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58), transparent 46%),
+    linear-gradient(135deg, #ff1493, #b000ff);
+  box-shadow:
+    0 7px 0 #7b0057,
+    0 14px 20px rgba(117, 0, 82, 0.28);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.look-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 9px 0 #7b0057,
+    0 18px 24px rgba(117, 0, 82, 0.3);
+}
+
+.look-arrow:active {
+  transform: translateY(5px);
+  box-shadow:
+    0 2px 0 #7b0057,
+    0 8px 14px rgba(117, 0, 82, 0.24);
+}
+
+.look-arrow span {
+  display: block;
+  width: 0;
+  height: 0;
+  filter: drop-shadow(2px 2px 0 rgba(123, 0, 87, 0.45));
+}
+
+.look-arrow-previous span {
+  border-top: 10px solid transparent;
+  border-right: 16px solid #ffffff;
+  border-bottom: 10px solid transparent;
+}
+
+.look-arrow-next span {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #ffffff;
+}
+
 .look-count {
   margin: 0 0 10px;
   color: #bb006d;
@@ -815,17 +871,6 @@ button {
   font-size: clamp(3rem, 7vw, 6.6rem);
   line-height: 0.92;
   text-shadow: none;
-}
-
-.look-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.look-controls button {
-  min-height: 44px;
-  padding: 10px 18px;
 }
 
 .trend-grid {

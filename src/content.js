@@ -7,7 +7,6 @@ export const siteContent = {
     ariaLabel: 'Pantalla de inicio',
     eyebrow: 'retro fashion portal',
     title: 'Moda 2000',
-    copy: 'Gloss rosa, denim lavado, accesorios brillantes y energia de revista teen.',
     loadingAriaLabel: 'Cargando closet',
     loadingText: 'loading closet...',
     button: 'Entrar al closet',

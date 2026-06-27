@@ -222,6 +222,24 @@ function App() {
               />
             </div>
             <div className="look-copy">
+              <div className="look-controls" aria-label="Controles del lookbook">
+                <button
+                  className="look-arrow look-arrow-previous"
+                  type="button"
+                  onClick={() => changeLook(-1)}
+                  aria-label={lookbookSection.previousAriaLabel}
+                >
+                  <span aria-hidden="true" />
+                </button>
+                <button
+                  className="look-arrow look-arrow-next"
+                  type="button"
+                  onClick={() => changeLook(1)}
+                  aria-label={lookbookSection.nextAriaLabel}
+                >
+                  <span aria-hidden="true" />
+                </button>
+              </div>
               <p className="look-count">
                 {String(activeLook + 1).padStart(2, '0')} / {String(currentItems.length).padStart(2, '0')}
               </p>
@@ -230,14 +248,6 @@ function App() {
                 <h3>{currentLook.title}</h3>
               </div>
               <p>{currentLook.note}</p>
-              <div className="look-controls">
-                <button type="button" onClick={() => changeLook(-1)} aria-label={lookbookSection.previousAriaLabel}>
-                  {lookbookSection.previousButton}
-                </button>
-                <button type="button" onClick={() => changeLook(1)} aria-label={lookbookSection.nextAriaLabel}>
-                  {lookbookSection.nextButton}
-                </button>
-              </div>
             </div>
           </div>
         </section>
