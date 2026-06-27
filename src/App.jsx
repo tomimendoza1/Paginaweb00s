@@ -6,12 +6,15 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [activeLook, setActiveLook] = useState(0);
+  const [activeMember, setActiveMember] = useState(0);
   const [sparkles, setSparkles] = useState([]);
 
   const {
     closet,
     document: documentContent,
     footer,
+    groupMembers,
+    groupSection,
     header,
     hero,
     intro,
@@ -26,6 +29,7 @@ function App() {
   const currentTab = lookbookTabs[activeTab];
   const currentItems = currentTab.items;
   const currentLook = currentItems[activeLook];
+  const currentMember = groupMembers[activeMember];
   const tickerWords = [...ticker.words, ...ticker.words.slice(0, 4)];
 
   useEffect(() => {
@@ -90,6 +94,10 @@ function App() {
 
   const changeLook = (direction) => {
     setActiveLook((index) => (index + direction + currentItems.length) % currentItems.length);
+  };
+
+  const changeMember = (direction) => {
+    setActiveMember((index) => (index + direction + groupMembers.length) % groupMembers.length);
   };
 
   const closeMenu = () => {
@@ -194,6 +202,53 @@ function App() {
           </div>
         </section>
 
+        <section className="group-section" id="grupo">
+          <div className="section-heading">
+            <p className="eyebrow">{groupSection.eyebrow}</p>
+            <h2>{groupSection.title}</h2>
+          </div>
+          <div className="group-intro-card">
+            <div className="group-intro-visual">
+              <img src={groupSection.introImage} alt={groupSection.introImageAlt} />
+            </div>
+            <p>{groupSection.introText}</p>
+          </div>
+          <div className={`group-card ${currentMember.color}`}>
+            <div className="member-visual">
+              <img
+                src={currentMember.image}
+                alt={`${groupSection.imageAltPrefix} ${currentMember.name}`}
+              />
+            </div>
+            <div className="member-copy">
+              <div className="look-controls" aria-label="Controles de integrantes">
+                <button
+                  className="look-arrow look-arrow-previous"
+                  type="button"
+                  onClick={() => changeMember(-1)}
+                  aria-label={groupSection.previousAriaLabel}
+                >
+                  <span aria-hidden="true" />
+                </button>
+                <button
+                  className="look-arrow look-arrow-next"
+                  type="button"
+                  onClick={() => changeMember(1)}
+                  aria-label={groupSection.nextAriaLabel}
+                >
+                  <span aria-hidden="true" />
+                </button>
+              </div>
+              <p className="look-count">
+                {String(activeMember + 1).padStart(2, '0')} / {String(groupMembers.length).padStart(2, '0')}
+              </p>
+              <p className="look-category">{currentMember.alias}</p>
+              <h3>{currentMember.name}</h3>
+              <p>{currentMember.description}</p>
+            </div>
+          </div>
+        </section>
+
         <section className="lookbook-section" id="lookbook">
           <div className="section-heading">
             <p className="eyebrow">{lookbookSection.eyebrow}</p>
@@ -272,36 +327,6 @@ function App() {
                   Play the song
                 </a>
               </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="gallery-section" id="moodboard">
-          <div className="gallery-copy popup-copy">
-            <p className="eyebrow">{moodboard.eyebrow}</p>
-            <h2>{moodboard.title}</h2>
-            <p>{moodboard.copy}</p>
-          </div>
-          <div className="moodboard">
-            <div className="gallery-frame">
-              <img src="/assets/y2k-board.png" alt={moodboard.imageAlt} />
-            </div>
-            {moodboard.stickers.map((sticker) => (
-              <span className={`sticker ${sticker.className}`} key={sticker.label}>
-                {sticker.label}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        <section className="closet-section" id="closet">
-          <div>
-            <p className="eyebrow">{closet.eyebrow}</p>
-            <h2>{closet.title}</h2>
-          </div>
-          <div className="closet-tags">
-            {closet.items.map((item) => (
-              <span key={item}>{item}</span>
             ))}
           </div>
         </section>

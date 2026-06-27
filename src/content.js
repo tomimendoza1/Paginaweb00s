@@ -16,9 +16,8 @@ export const siteContent = {
     navAriaLabel: 'Secciones principales',
     links: [
       { href: '#lookbook', label: 'Lookbook' },
+      { href: '#grupo', label: 'Grupo' },
       { href: '#tendencias', label: 'Tendencias' },
-      { href: '#moodboard', label: 'Moodboard' },
-      { href: '#closet', label: 'Closet' },
     ],
   },
   hero: {
@@ -44,6 +43,51 @@ export const siteContent = {
     previousAriaLabel: 'Look anterior',
     nextAriaLabel: 'Look siguiente',
   },
+  groupSection: {
+    eyebrow: 'team closet',
+    title: 'Presentacion del grupo',
+    introImage: '/assets/WhatsApp Image 2026-06-27 at 17.39.03.jpeg',
+    introImageAlt: 'Camila, Catalina, Priscila y Lucia inspiradas en la estetica dosmilera',
+    introText:
+      'La union de Camila, Catalina, Priscila y Lucia surgio de una pasion compartida por la estetica de los años 2000 y el deseo de documentar la relevancia actual de este estilo.',
+    imageAltPrefix: 'Foto de',
+    previousAriaLabel: 'Integrante anterior',
+    nextAriaLabel: 'Integrante siguiente',
+  },
+  groupMembers: [
+    {
+      name: 'Camila',
+      alias: 'La It Girl del brillo',
+      description:
+        'No sale de casa sin pantalones de tiro bajo, baby tee sarcastica con glitter, micro-minifalda de jean y bolso baguette. Su estilo mezcla Paris Hilton, Bratz, hebillas de mariposa y gloss efecto espejo.',
+      color: 'look-gloss',
+      image: '/assets/WhatsApp Image 2026-06-27 at 17.38.49.jpeg',
+    },
+    {
+      name: 'Priscila',
+      alias: 'La reina del denim on denim',
+      description:
+        'Le da una vuelta urbana al dosmil. Campera de jean entallada, falda midi a juego, plataformas gigantes, cinturones con tachas, panuelos como tops y anteojos translucidos.',
+      color: 'look-denim',
+      image: '/assets/WhatsApp Image 2026-06-27 at 17.38.49 (1).jpeg',
+    },
+    {
+      name: 'Catalina',
+      alias: 'La version Cyber-Pop',
+      description:
+        'Es la mas vanguardista del grupo: metalicos, vinilo, neon, cargos con mil bolsillos, tops con tiras cruzadas y zapatillas con mucha suela. Siempre documenta todo con camara digital.',
+      color: 'look-chrome',
+      image: '/assets/WhatsApp Image 2026-06-27 at 17.38.50.jpeg',
+    },
+    {
+      name: 'Lucia',
+      alias: 'La romantica Chic-dosmilera',
+      description:
+        'Prefiere el lado preppy y femenino: leopardo, cardigans con strass, camisas cortas, pasteles con detalles oscuros, botas bucaneras y carteras monograma listas para MTV 2003.',
+      color: 'look-velour',
+      image: '/assets/WhatsApp Image 2026-06-27 at 17.38.50 (1).jpeg',
+    },
+  ],
   lookbookTabs: [
     {
       label: 'Looks',
