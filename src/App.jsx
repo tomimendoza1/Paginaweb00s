@@ -10,7 +10,6 @@ function App() {
   const [sparkles, setSparkles] = useState([]);
 
   const {
-    closet,
     document: documentContent,
     footer,
     groupMembers,
@@ -20,7 +19,6 @@ function App() {
     intro,
     lookbookSection,
     lookbookTabs,
-    moodboard,
     ticker,
     trends,
     trendsSection,
