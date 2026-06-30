@@ -329,6 +329,6 @@ export const siteContent = {
     items: ['Mini bag', 'Butterfly clips', 'Gloss', 'Platform shoes', 'Tinted shades'],
   },
   footer: {
-    text: 'TP grupal por @camilacorti_ @priimansiilla @caturivello @lurossix .',
+    text: '@camilacorti_ @priimansiilla @caturivello @lurossix .',
   },
 };
