@@ -233,7 +233,7 @@ button {
   text-transform: uppercase;
 }
 
-.intro-panel h1,
+.intro-logo,
 .hero-copy h2,
 .section-heading h2,
 .gallery-copy h2,
@@ -247,8 +247,20 @@ button {
   text-shadow: none;
 }
 
-.intro-panel h1 {
-  font-size: clamp(4rem, 14vw, 8.4rem);
+.intro-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(560px, 100%);
+  height: clamp(220px, 32vw, 330px);
+  margin: 0 auto;
+}
+
+.intro-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .intro-copy {
@@ -351,8 +363,8 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  min-height: 70px;
-  padding: 14px clamp(16px, 5vw, 54px);
+  min-height: 150px;
+  padding: 34px clamp(18px, 5vw, 62px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.85);
   background: rgba(255, 205, 235, 0.82);
   backdrop-filter: blur(14px);
@@ -371,15 +383,17 @@ button {
 .topbar-logo-mark {
   position: absolute;
   left: 50%;
+  top: 50%;
   display: block;
-  width: min(300px, 34vw);
-  transform: translateX(-50%);
+  width: min(360px, 46vw);
+  height: 132px;
+  transform: translate(-50%, -50%);
 }
 
 .topbar-logo-mark img {
   display: block;
   width: 100%;
-  height: 50px;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -1284,11 +1298,12 @@ button {
   }
 
   .topbar-logo-mark {
-    width: min(150px, 36vw);
+    width: min(240px, 52vw);
+    height: 92px;
   }
 
   .topbar-logo-mark img {
-    height: 38px;
+    object-fit: contain;
   }
 
   .menu-toggle {
@@ -1305,8 +1320,8 @@ button {
     display: none;
   }
 
-  .intro-panel h1 {
-    font-size: 3.7rem;
+  .intro-logo {
+    height: clamp(170px, 50vw, 230px);
   }
 
   .hero-copy {

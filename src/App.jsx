@@ -124,7 +124,9 @@ function App() {
             </div>
             <div className="intro-panel">
               <p className="eyebrow">{intro.eyebrow}</p>
-              <h1>{intro.title}</h1>
+              <div className="intro-logo" aria-label={intro.title}>
+                <img src="/assets/logoo-cropped.png" alt="" aria-hidden="true" />
+              </div>
               <p className="intro-copy">{intro.copy}</p>
               <div className="loading-box" aria-label={intro.loadingAriaLabel}>
                 <span>{intro.loadingText}</span>
@@ -143,8 +145,8 @@ function App() {
       <section className={`page-content ${entered ? 'is-visible' : ''}`} aria-hidden={!entered}>
         <header className="topbar">
           <a href="#inicio" className="logo-link">{header.logo}</a>
-          <a href="#inicio" className="topbar-logo-mark" aria-label={header.logo}>
-            <img src="/assets/y2k-logo.png" alt="" aria-hidden="true" />
+          <a href="#inicio" className="topbar-logo-mark" aria-label="Y2K Style">
+            <img src="/assets/logoo-cropped.png" alt="" aria-hidden="true" />
           </a>
           <button
             className="menu-toggle"
@@ -188,7 +190,6 @@ function App() {
             <p className="eyebrow">{hero.eyebrow}</p>
             <h2>{hero.title}</h2>
             <p>{hero.copy}</p>
-            <a className="hero-cta" href="#lookbook">{hero.button}</a>
           </div>
         </section>
 
