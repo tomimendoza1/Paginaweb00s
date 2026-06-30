@@ -329,6 +329,6 @@ export const siteContent = {
     items: ['Mini bag', 'Butterfly clips', 'Gloss', 'Platform shoes', 'Tinted shades'],
   },
   footer: {
-    text: 'Pagina web retro Y2K hecho para TP de la Facultad de Periodismo (UNLP).',
+    text: 'TP grupal por @camilacorti_ @priimansiilla @caturivello @lurossix .',
   },
 };
